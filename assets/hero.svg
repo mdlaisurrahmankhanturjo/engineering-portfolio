@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1600"
+     height="520"
+     viewBox="0 0 1600 520">
+
+<defs>
+
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#06111F"/>
+<stop offset="100%" stop-color="#0A1C33"/>
+</linearGradient>
+
+<linearGradient id="scan" x1="0" x2="1">
+<stop offset="0%" stop-color="#00E5FF" stop-opacity="0"/>
+<stop offset="50%" stop-color="#00E5FF"/>
+<stop offset="100%" stop-color="#00E5FF" stop-opacity="0"/>
+</linearGradient>
+
+<filter id="glow">
+<feGaussianBlur stdDeviation="4" result="blur"/>
+<feMerge>
+<feMergeNode in="blur"/>
+<feMergeNode in="SourceGraphic"/>
+</feMerge>
+</filter>
+
+<pattern id="grid"
+width="40"
+height="40"
+patternUnits="userSpaceOnUse">
+
+<path d="M40 0H0V40"
+fill="none"
+stroke="#12395B"
+stroke-width="1"/>
+
+</pattern>
+
+</defs>
+
+<rect width="1600" height="520" fill="url(#bg)"/>
+
+<rect width="1600" height="520"
+fill="url(#grid)"
+opacity=".35"/>
+
+<!-- Radar -->
+
+<g transform="translate(1320 260)">
+
+<circle r="120"
+fill="none"
+stroke="#00E5FF"
+opacity=".3"/>
+
+<circle r="90"
+fill="none"
+stroke="#00E5FF"
+opacity=".25"/>
+
+<circle r="60"
+fill="none"
+stroke="#00E5FF"
+opacity=".2"/>
+
+<line x1="0" y1="0"
+x2="110"
+y2="0"
+stroke="#00E5FF"
+stroke-width="2">
+
+<animateTransform
+attributeName="transform"
+attributeType="XML"
+type="rotate"
+from="0"
+to="360"
+dur="8s"
+repeatCount="indefinite"/>
+
+</line>
+
+</g>
+
+<!-- Gear -->
+
+<g transform="translate(180 120)">
+
+<g>
+
+<animateTransform
+attributeName="transform"
+type="rotate"
+from="0"
+to="360"
+dur="20s"
+repeatCount="indefinite"/>
+
+<circle r="28"
+fill="none"
+stroke="#00E5FF"
+stroke-width="2"/>
+
+<circle r="14"
+fill="none"
+stroke="#00E5FF"/>
+
+</g>
+
+</g>
+
+<!-- Scan line -->
+
+<rect
+x="-300"
+y="0"
+width="300"
+height="520"
+fill="url(#scan)"
+opacity=".25">
+
+<animate
+attributeName="x"
+from="-300"
+to="1900"
+dur="6s"
+repeatCount="indefinite"/>
+
+</rect>
+
+<!-- Title -->
+
+<text
+x="100"
+y="180"
+font-size="56"
+font-family="Segoe UI"
+fill="#DFFAFF"
+filter="url(#glow)">
+
+ENGINEERING PORTFOLIO
+
+<animate
+attributeName="opacity"
+values="1;.75;1"
+dur="3s"
+repeatCount="indefinite"/>
+
+</text>
+
+<text
+x="100"
+y="240"
+font-size="32"
+font-family="Segoe UI"
+fill="#7CEBFF">
+
+Md Laisur Rahman Khan Turjo
+
+</text>
+
+<text
+x="100"
+y="285"
+font-size="22"
+font-family="Segoe UI"
+fill="#44DFFF">
+
+Mechanical Engineer
+
+</text>
+
+<text
+x="100"
+y="345"
+font-size="20"
+font-family="Segoe UI"
+fill="#B4EFFF">
+
+UAV Systems • Robotics • CAD Design • Engineering Simulation
+
+</text>
+
+<!-- particles -->
+
+<g fill="#00E5FF">
+
+<circle cx="700" cy="120" r="2">
+
+<animate attributeName="cy"
+values="120;80;120"
+dur="5s"
+repeatCount="indefinite"/>
+
+</circle>
+
+<circle cx="760" cy="180" r="2">
+
+<animate attributeName="cy"
+values="180;140;180"
+dur="6s"
+repeatCount="indefinite"/>
+
+</circle>
+
+<circle cx="830" cy="260" r="2">
+
+<animate attributeName="cy"
+values="260;220;260"
+dur="7s"
+repeatCount="indefinite"/>
+
+</circle>
+
+</g>
+
+</svg>
