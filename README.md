@@ -47,26 +47,6 @@ Its purpose is to provide recruiters, researchers, students, and collaborators w
 ---
 
 
-
-# 📖 Repository Purpose
-
-This repository complements my GitHub profile by organizing the engineering resources that extend beyond source code and project repositories.
-
-It serves as a centralized archive for technical documentation, engineering references, design assets, simulation outputs, publications, and downloadable materials, making it easier to explore the complete engineering workflow behind my projects.
-
----
-
-> *"Engineering is not only about building systems—it's about understanding problems, validating solutions, and continuously improving through innovation."*
-
----
-
-<p align="center">
-
-**⬇ Continue below to explore the Engineering Resource Center ⬇**
-
-</p>
-
----
 <!-- =============================================================== -->
 <!--                    DOWNLOAD & RESOURCE HUB                      -->
 <!-- =============================================================== -->
@@ -112,6 +92,26 @@ Everything in this section is available for viewing or downloading.
 <!-- =============================================================== -->
 <!--                 ENGINEERING PROJECT DIRECTORY                   -->
 <!-- =============================================================== -->
+
+
+# 📖 Repository Purpose
+
+This repository complements my GitHub profile by organizing the engineering resources that extend beyond source code and project repositories.
+
+It serves as a centralized archive for technical documentation, engineering references, design assets, simulation outputs, publications, and downloadable materials, making it easier to explore the complete engineering workflow behind my projects.
+
+---
+
+> *"Engineering is not only about building systems—it's about understanding problems, validating solutions, and continuously improving through innovation."*
+
+---
+
+<p align="center">
+
+**⬇ Continue below to explore the Engineering Resource Center ⬇**
+
+</p>
+
 
 # 🗂 Engineering Project Directory
 
