@@ -2,101 +2,67 @@
 
 <svg
 xmlns="http://www.w3.org/2000/svg"
-xmlns:xlink="http://www.w3.org/1999/xlink"
-
+viewBox="0 0 1600 520"
 width="1600"
-height="520"
+height="520">
 
-viewBox="0 0 1600 520">
+<!-- ===================================================== -->
+<!-- DEFINITIONS -->
+<!-- ===================================================== -->
 
 <defs>
 
-<!-- =============================== -->
-<!-- COLORS -->
-<!-- =============================== -->
+<!-- Background -->
 
-<linearGradient id="bgGradient"
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
 
-x1="0"
-y1="0"
+<stop offset="0%" stop-color="#06131F"/>
 
-x2="1"
-y2="1">
-
-<stop offset="0%" stop-color="#07131F"/>
-
-<stop offset="100%" stop-color="#0C1C2E"/>
+<stop offset="100%" stop-color="#0A1E31"/>
 
 </linearGradient>
 
-
-<!-- =============================== -->
-<!-- BLUEPRINT GRID -->
-<!-- =============================== -->
+<!-- Blueprint Grid -->
 
 <pattern
 id="smallGrid"
-
-width="25"
-
-height="25"
-
+width="20"
+height="20"
 patternUnits="userSpaceOnUse">
 
 <path
-
-d="M25 0 H0 V25"
-
+d="M20 0H0V20"
 fill="none"
-
-stroke="#143754"
-
-stroke-width=".6"/>
+stroke="#153652"
+stroke-width=".5"/>
 
 </pattern>
 
-
 <pattern
-
 id="grid"
-
 width="100"
-
 height="100"
-
 patternUnits="userSpaceOnUse">
 
 <rect
-
 width="100"
-
 height="100"
-
 fill="url(#smallGrid)"/>
 
 <path
-
-d="M100 0 H0 V100"
-
+d="M100 0H0V100"
 fill="none"
-
-stroke="#1A4A70"
-
+stroke="#1C5076"
 stroke-width="1"/>
 
 </pattern>
 
-
-<!-- =============================== -->
-<!-- GLOW -->
-<!-- =============================== -->
+<!-- Glow -->
 
 <filter id="glow">
 
 <feGaussianBlur
-
-stdDeviation="5"
-
+stdDeviation="4"
 result="blur"/>
 
 <feMerge>
@@ -109,17 +75,12 @@ result="blur"/>
 
 </filter>
 
+<!-- Strong Glow -->
 
-<!-- =============================== -->
-<!-- TITLE GLOW -->
-<!-- =============================== -->
-
-<filter id="titleGlow">
+<filter id="bigGlow">
 
 <feGaussianBlur
-
 stdDeviation="8"
-
 result="blur"/>
 
 <feMerge>
@@ -134,218 +95,146 @@ result="blur"/>
 
 </defs>
 
-
-
-<!-- ================================= -->
+<!-- ===================================================== -->
 <!-- BACKGROUND -->
-<!-- ================================= -->
+<!-- ===================================================== -->
 
 <rect
-
 width="1600"
-
 height="520"
+fill="url(#bg)"/>
 
-fill="url(#bgGradient)"/>
-
-
-
-<!-- ================================= -->
+<!-- ===================================================== -->
 <!-- GRID -->
-<!-- ================================= -->
+<!-- ===================================================== -->
 
 <rect
-
 width="1600"
-
 height="520"
-
 fill="url(#grid)"
-
 opacity=".55"/>
-
-     <!-- ========================================================= -->
-<!--                  OUTER HUD FRAME                          -->
-<!-- ========================================================= -->
+<!-- ===================================================== -->
+<!-- HUD FRAME -->
+<!-- ===================================================== -->
 
 <g id="hudFrame"
-   stroke="#00D9FF"
-   stroke-width="2"
-   fill="none"
-   opacity=".9">
+stroke="#00E5FF"
+stroke-width="2"
+fill="none"
+filter="url(#glow)"
+opacity=".75">
 
-  <!-- Top -->
-  <path d="
-      M80 35
-      L260 35
+    <!-- Top -->
 
-      L285 20
+    <path d="
+    M80 40
+    L250 40
+    L275 20
+    L1325 20
+    L1350 40
+    L1520 40"/>
 
-      L1315 20
+    <!-- Bottom -->
 
-      L1340 35
+    <path d="
+    M80 480
+    L250 480
+    L275 500
+    L1325 500
+    L1350 480
+    L1520 480"/>
 
-      L1520 35"/>
+    <!-- Left -->
 
-  <!-- Bottom -->
-  <path d="
-      M80 485
+    <path d="
+    M40 80
+    L40 200
+    L20 225
+    L20 295
+    L40 320
+    L40 440"/>
 
-      L260 485
+    <!-- Right -->
 
-      L285 500
-
-      L1315 500
-
-      L1340 485
-
-      L1520 485"/>
-
-  <!-- Left -->
-  <path d="
-      M35 80
-
-      L35 200
-
-      L20 225
-
-      L20 295
-
-      L35 320
-
-      L35 440"/>
-
-  <!-- Right -->
-  <path d="
-      M1565 80
-
-      L1565 200
-
-      L1580 225
-
-      L1580 295
-
-      L1565 320
-
-      L1565 440"/>
+    <path d="
+    M1560 80
+    L1560 200
+    L1580 225
+    L1580 295
+    L1560 320
+    L1560 440"/>
 
 </g>
 
-
-
-<!-- ========================================================= -->
-<!--                    HUD CORNERS                            -->
-<!-- ========================================================= -->
+<!-- ===================================================== -->
+<!-- GLOWING CORNERS -->
+<!-- ===================================================== -->
 
 <g
-stroke="#00E5FF"
+stroke="#66FCFF"
 stroke-width="3"
 fill="none"
 filter="url(#glow)">
 
-<!-- TOP LEFT -->
+<!-- Top Left -->
 
-<path d="
-M40 95
-
-L40 40
-
-L95 40">
-
+<path d="M40 100 L40 40 L100 40">
 <animate
 attributeName="opacity"
 values="1;.35;1"
-dur="5s"
+dur="4s"
 repeatCount="indefinite"/>
-
 </path>
 
+<!-- Top Right -->
 
-
-<!-- TOP RIGHT -->
-
-<path d="
-M1560 95
-
-L1560 40
-
-L1505 40">
-
+<path d="M1560 100 L1560 40 L1500 40">
 <animate
 attributeName="opacity"
 values="1;.35;1"
-dur="5s"
+dur="4s"
 repeatCount="indefinite"/>
-
 </path>
 
+<!-- Bottom Left -->
 
-
-<!-- BOTTOM LEFT -->
-
-<path d="
-M40 425
-
-L40 480
-
-L95 480">
-
+<path d="M40 420 L40 480 L100 480">
 <animate
 attributeName="opacity"
 values="1;.35;1"
-dur="5s"
+dur="4s"
 repeatCount="indefinite"/>
-
 </path>
 
+<!-- Bottom Right -->
 
-
-<!-- BOTTOM RIGHT -->
-
-<path d="
-M1560 425
-
-L1560 480
-
-L1505 480">
-
+<path d="M1560 420 L1560 480 L1500 480">
 <animate
 attributeName="opacity"
 values="1;.35;1"
-dur="5s"
+dur="4s"
 repeatCount="indefinite"/>
-
 </path>
 
 </g>
 
-
-
-<!-- ========================================================= -->
-<!--                  TOP DECORATIVE HUD                       -->
-<!-- ========================================================= -->
+<!-- ===================================================== -->
+<!-- TOP HUD BAR -->
+<!-- ===================================================== -->
 
 <g
 stroke="#00E5FF"
 stroke-width="2"
-opacity=".75">
+opacity=".55">
 
-<line
-x1="520"
-y1="28"
-x2="1080"
-y2="28"/>
+<line x1="520" y1="30" x2="1080" y2="30"/>
 
-<line
-x1="620"
-y1="15"
-x2="980"
-y2="15"
-opacity=".4"/>
+<line x1="640" y1="18" x2="960" y2="18"
+opacity=".35"/>
 
 <circle
 cx="800"
-cy="28"
+cy="30"
 r="4"
 fill="#00E5FF">
 
@@ -359,807 +248,570 @@ repeatCount="indefinite"/>
 
 </g>
 
+<!-- ===================================================== -->
+<!-- SIDE TICKS -->
+<!-- ===================================================== -->
+
+<g
+stroke="#00E5FF"
+stroke-width="1.5"
+opacity=".30">
+
+<line x1="80" y1="120" x2="60" y2="120"/>
+<line x1="80" y1="170" x2="55" y2="170"/>
+<line x1="80" y1="220" x2="60" y2="220"/>
+<line x1="80" y1="270" x2="55" y2="270"/>
+<line x1="80" y1="320" x2="60" y2="320"/>
+<line x1="80" y1="370" x2="55" y2="370"/>
+
+<line x1="1520" y1="120" x2="1545" y2="120"/>
+<line x1="1520" y1="170" x2="1540" y2="170"/>
+<line x1="1520" y1="220" x2="1545" y2="220"/>
+<line x1="1520" y1="270" x2="1540" y2="270"/>
+<line x1="1520" y1="320" x2="1545" y2="320"/>
+<line x1="1520" y1="370" x2="1540" y2="370"/>
+
+</g>
+
+<!-- ===================================================== -->
+<!-- GRID MOTION -->
+<!-- ===================================================== -->
+
+<g opacity=".06">
+
+<rect
+x="-100"
+y="0"
+width="1800"
+height="520"
+fill="url(#grid)">
+
+<animateTransform
+attributeName="transform"
+type="translate"
+values="0 0;30 15;0 0"
+dur="40s"
+repeatCount="indefinite"/>
+
+</rect>
+
+</g>
+
+<!-- ===================================================== -->
+<!-- SMALL HUD DOTS -->
+<!-- ===================================================== -->
+
+<g fill="#66FCFF">
+
+<circle cx="120" cy="60" r="2">
+<animate attributeName="opacity"
+values=".2;1;.2"
+dur="2s"
+repeatCount="indefinite"/>
+</circle>
+
+<circle cx="1480" cy="60" r="2">
+<animate attributeName="opacity"
+values="1;.2;1"
+dur="2s"
+repeatCount="indefinite"/>
+</circle>
+
+<circle cx="120" cy="460" r="2">
+<animate attributeName="opacity"
+values=".2;1;.2"
+dur="3s"
+repeatCount="indefinite"/>
+</circle>
+
+<circle cx="1480" cy="460" r="2">
+<animate attributeName="opacity"
+values="1;.2;1"
+dur="3s"
+repeatCount="indefinite"/>
+</circle>
+
+</g>
+<!-- ===================================================== -->
+<!-- LEFT INFORMATION PANEL -->
+<!-- ===================================================== -->
+
+<g id="leftPanel">
+
+    <!-- Small Heading -->
+
+    <text
+        x="110"
+        y="95"
+        fill="#66FCFF"
+        font-family="Segoe UI, Arial"
+        font-size="15"
+        letter-spacing="4"
+        opacity=".8">
+
+        ENGINEERING DASHBOARD
+
+    </text>
+
+    <!-- Main Title -->
+
+    <text
+        x="110"
+        y="165"
+        fill="#E8FFFF"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="58"
+        font-weight="700"
+        filter="url(#bigGlow)">
+
+        ENGINEERING
+
+        <animate
+            attributeName="opacity"
+            values="1;.75;1"
+            dur="4s"
+            repeatCount="indefinite"/>
+
+    </text>
+
+    <text
+        x="110"
+        y="220"
+        fill="#E8FFFF"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="58"
+        font-weight="700"
+        filter="url(#bigGlow)">
+
+        PORTFOLIO
+
+        <animate
+            attributeName="opacity"
+            values=".75;1;.75"
+            dur="4s"
+            repeatCount="indefinite"/>
+
+    </text>
+
+    <!-- Cyan Divider -->
+
+    <line
+
+        x1="110"
+        y1="245"
+
+        x2="620"
+        y2="245"
+
+        stroke="#00E5FF"
+        stroke-width="3">
+
+        <animate
+            attributeName="x2"
+            values="250;620;250"
+            dur="6s"
+            repeatCount="indefinite"/>
+
+    </line>
+
+</g>
 
 
-<!-- ========================================================= -->
-<!--                GLOWING EDGE TICKS                         -->
-<!-- ========================================================= -->
+
+<!-- ===================================================== -->
+<!-- PROFILE -->
+<!-- ===================================================== -->
+
+<g id="profile">
+
+<text
+x="110"
+y="295"
+fill="#FFFFFF"
+font-family="Segoe UI, Arial"
+font-size="28">
+
+Md Laisur Rahman Khan Turjo
+
+</text>
+
+<text
+x="110"
+y="330"
+fill="#67F2FF"
+font-family="Segoe UI, Arial"
+font-size="20">
+
+Mechanical Engineer
+
+</text>
+
+<text
+x="110"
+y="360"
+fill="#A9F8FF"
+font-family="Segoe UI, Arial"
+font-size="16">
+
+UAV Systems • Robotics • CAD • CFD • Simulation
+
+</text>
+
+</g>
+
+
+
+<!-- ===================================================== -->
+<!-- STATUS PANEL -->
+<!-- ===================================================== -->
+
+<g id="statusPanel">
+
+<text
+x="110"
+y="420"
+fill="#00FFAA"
+font-family="Consolas"
+font-size="16">
+
+● SYSTEM ONLINE
+
+<animate
+attributeName="opacity"
+values="1;.35;1"
+dur="2s"
+repeatCount="indefinite"/>
+
+</text>
+
+<text
+x="110"
+y="445"
+fill="#78F6FF"
+font-family="Consolas"
+font-size="14">
+
+CAD MODULE ........ READY
+
+</text>
+
+<text
+x="110"
+y="465"
+fill="#78F6FF"
+font-family="Consolas"
+font-size="14">
+
+CFD MODULE ........ READY
+
+</text>
+
+<text
+x="110"
+y="485"
+fill="#78F6FF"
+font-family="Consolas"
+font-size="14">
+
+IEEE DATABASE ..... CONNECTED
+
+</text>
+
+</g>
+
+
+
+<!-- ===================================================== -->
+<!-- HUD DECORATION -->
+<!-- ===================================================== -->
 
 <g
 stroke="#00E5FF"
 stroke-width="2"
-opacity=".45">
+opacity=".35">
 
-<line x1="180" y1="20" x2="210" y2="20"/>
-<line x1="220" y1="20" x2="250" y2="20"/>
-<line x1="1350" y1="20" x2="1380" y2="20"/>
-<line x1="1390" y1="20" x2="1420" y2="20"/>
+<line
+x1="110"
+y1="385"
+x2="720"
+y2="385"/>
 
-<line x1="180" y1="500" x2="210" y2="500"/>
-<line x1="220" y1="500" x2="250" y2="500"/>
-<line x1="1350" y1="500" x2="1380" y2="500"/>
-<line x1="1390" y1="500" x2="1420" y2="500"/>
+<line
+x1="110"
+y1="392"
+x2="650"
+y2="392"
+opacity=".4"/>
 
-</g>
-
-     <!-- ========================================================= -->
-<!--                   HERO TITLE                              -->
-<!-- ========================================================= -->
-
-<g id="heroTitle">
-
-  <!-- Small Label -->
-  <text
-      x="120"
-      y="95"
-      font-family="Segoe UI"
-      font-size="15"
-      letter-spacing="4"
-      fill="#57E8FF"
-      opacity=".8">
-
-      ENGINEERING DASHBOARD
-
-  </text>
-
-  <!-- Main Title -->
-
-  <text
-      x="120"
-      y="165"
-      font-family="Orbitron, Segoe UI, Arial"
-      font-size="58"
-      font-weight="700"
-      fill="#DDFEFF"
-      filter="url(#titleGlow)">
-
-      ENGINEERING PORTFOLIO
-
-      <animate
-          attributeName="opacity"
-          values="1;.75;1"
-          dur="4s"
-          repeatCount="indefinite"/>
-
-  </text>
-
-  <!-- Cyan Underline -->
-
-  <line
-
-      x1="120"
-      y1="182"
-
-      x2="620"
-      y2="182"
-
-      stroke="#00E5FF"
-
-      stroke-width="3">
-
-      <animate
-          attributeName="x2"
-          values="250;620;250"
-          dur="5s"
-          repeatCount="indefinite"/>
-
-  </line>
+<line
+x1="110"
+y1="399"
+x2="520"
+y2="399"
+opacity=".25"/>
 
 </g>
-
-<!-- ========================================================= -->
-<!--                    PERSONAL INFO                          -->
-<!-- ========================================================= -->
-
-<g id="personalInfo">
-
-  <text
-      x="120"
-      y="235"
-      font-family="Segoe UI"
-      font-size="30"
-      fill="#FFFFFF">
-
-      Md Laisur Rahman Khan Turjo
-
-  </text>
-
-  <text
-      x="120"
-      y="275"
-      font-family="Segoe UI"
-      font-size="22"
-      fill="#63ECFF">
-
-      Mechanical Engineer
-
-  </text>
-
-  <text
-      x="120"
-      y="315"
-      font-family="Segoe UI"
-      font-size="18"
-      fill="#9BEFFF">
-
-      UAV Systems • Robotics • CAD Design • CFD • Engineering Simulation
-
-  </text>
-
-</g>
-
-<!-- ========================================================= -->
-<!--                    STATUS PANEL                           -->
-<!-- ========================================================= -->
-
-<g id="statusPanel">
-
-  <text
-      x="120"
-      y="390"
-      font-family="Consolas"
-      font-size="18"
-      fill="#00FFB7">
-
-      ● SYSTEM STATUS : ONLINE
-
-      <animate
-          attributeName="opacity"
-          values="1;.45;1"
-          dur="2s"
-          repeatCount="indefinite"/>
-
-  </text>
-
-  <text
-      x="120"
-      y="420"
-      font-family="Consolas"
-      font-size="15"
-      fill="#65EFFF">
-
-      CAD MODULE ........ READY
-
-  </text>
-
-  <text
-      x="120"
-      y="445"
-      font-family="Consolas"
-      font-size="15"
-      fill="#65EFFF">
-
-      CFD MODULE ........ READY
-
-  </text>
-
-  <text
-      x="120"
-      y="470"
-      font-family="Consolas"
-      font-size="15"
-      fill="#65EFFF">
-
-      RESEARCH DATABASE ........ ACTIVE
-
-  </text>
-
-</g>
-
-<!-- ========================================================= -->
-<!--                DECORATIVE HUD LINES                       -->
-<!-- ========================================================= -->
-
-<g
-stroke="#00D9FF"
-stroke-width="2"
-opacity=".55">
-
-<line x1="110" y1="350" x2="720" y2="350"/>
-
-<line x1="110" y1="360" x2="620" y2="360" opacity=".35"/>
-
-<line x1="110" y1="372" x2="510" y2="372" opacity=".20"/>
-
-</g>
-
-     <!-- ========================================================= -->
-<!--                 VTOL UAV BLUEPRINT (4A)                   -->
-<!-- ========================================================= -->
+<!-- ===================================================== -->
+<!-- VTOL UAV BLUEPRINT -->
+<!-- ===================================================== -->
 
 <g id="vtolBlueprint"
-   transform="translate(880,260)"
-   stroke="#00E5FF"
+   transform="translate(930,260)"
+   stroke="#66F8FF"
    stroke-width="2"
    fill="none"
-   opacity=".85"
-   filter="url(#glow)">
+   filter="url(#glow)"
+   opacity=".85">
 
-    <!-- ===================== -->
-    <!-- CENTER FUSELAGE -->
-    <!-- ===================== -->
+    <!-- ========================= -->
+    <!-- FUSELAGE -->
+    <!-- ========================= -->
 
-    <path d="
-        M -210 0
-        L -185 -8
-        L -90 -12
-        L 80 -12
-        L 150 -7
-        L 205 0
-        L 150 7
-        L 80 12
-        L -90 12
-        L -185 8
-        Z">
+    <rect
+        x="-170"
+        y="-12"
+        width="340"
+        height="24"
+        rx="10"/>
 
-         <animate
-        attributeName="stroke-dashoffset"
-        from="900"
-        to="0"
-        dur="3.5s"
-        fill="freeze"/>
+    <!-- Nose -->
 
-    </path>
+    <polygon
+        points="170,-12 205,0 170,12"/>
 
-    <!-- ===================== -->
+    <!-- Tail -->
+
+    <polygon
+        points="-170,-12 -205,0 -170,12"/>
+
+    <!-- ========================= -->
     <!-- MAIN WING -->
-    <!-- ===================== -->
+    <!-- ========================= -->
 
-    <path d="
-        M -45 0
-        L -120 -95
-        L 95 -20
-        L 220 -8
-        L 95 20
-        L -120 95
-        Z">
+    <polygon
+        points="
+        -20,-12
+        -120,-90
+        110,-25
+        210,-12
+        110,25
+        -120,90
+        -20,12"/>
 
-         <animate
-        attributeName="stroke-dashoffset"
-        from="900"
-        to="0"
-        dur="3.5s"
-        fill="freeze"/>
-    </path>
-
-    <!-- ===================== -->
+    <!-- ========================= -->
     <!-- HORIZONTAL TAIL -->
-    <!-- ===================== -->
+    <!-- ========================= -->
 
-    <path d="
-        M -180 0
-        L -235 -42
-        L -170 -12
-        L -170 12
-        L -235 42
-        Z"/>
-     <animate
-        attributeName="stroke-dashoffset"
-        from="900"
-        to="0"
-        dur="3.5s"
-        fill="freeze"/>
+    <polygon
+        points="
+        -175,-8
+        -245,-42
+        -175,8
+        -245,42"/>
 
-</path>
+    <!-- ========================= -->
+    <!-- VERTICAL TAIL -->
+    <!-- ========================= -->
 
-    <!-- ===================== -->
-    <!-- VERTICAL FIN -->
-    <!-- ===================== -->
+    <polygon
+        points="
+        -175,0
+        -160,-60
+        -145,0"/>
 
-    <path d="
-        M -188 0
-        L -175 -55
-        L -160 -2
-        Z"/>
-
-    <!-- ===================== -->
-    <!-- CENTERLINE -->
-    <!-- ===================== -->
+    <!-- ========================= -->
+    <!-- CENTER LINE -->
+    <!-- ========================= -->
 
     <line
         x1="-260"
         y1="0"
         x2="260"
         y2="0"
-        opacity=".35"/>
+        opacity=".25"/>
 
-    <!-- ===================== -->
-    <!-- FUSELAGE REFERENCE -->
-    <!-- ===================== -->
+    <!-- ========================= -->
+    <!-- ROTOR GUIDES -->
+    <!-- ========================= -->
 
-    <circle
-        cx="-30"
-        cy="0"
-        r="8"/>
+    <circle cx="-120" cy="-90" r="28"/>
+    <circle cx="-120" cy="90" r="28"/>
 
-    <circle
-        cx="35"
-        cy="0"
-        r="8"/>
+    <circle cx="110" cy="-25" r="24"/>
+    <circle cx="110" cy="25" r="24"/>
 
-    <!-- ===================== -->
-    <!-- NOSE -->
-    <!-- ===================== -->
+    <!-- Rotor Hubs -->
 
-    <circle
-        cx="208"
-        cy="0"
-        r="4"
-        fill="#00E5FF"/>
+    <circle cx="-120" cy="-90" r="4" fill="#66F8FF"/>
+    <circle cx="-120" cy="90" r="4" fill="#66F8FF"/>
+
+    <circle cx="110" cy="-25" r="4" fill="#66F8FF"/>
+    <circle cx="110" cy="25" r="4" fill="#66F8FF"/>
 
 </g>
 
-     <!-- ========================================================= -->
-<!--          VTOL ROTORS & NACELLES (4B)                      -->
-<!-- ========================================================= -->
+<!-- ===================================================== -->
+<!-- ENGINEERING DIMENSIONS -->
+<!-- ===================================================== -->
 
-<g id="vtolRotors"
-   transform="translate(880,260)"
-   stroke="#00E5FF"
-   stroke-width="1.8"
-   fill="none"
-   opacity=".75"
-   filter="url(#glow)">
+<g
+transform="translate(930,260)"
+stroke="#66F8FF"
+stroke-width="1"
+opacity=".45"
+fill="none">
 
-    <!-- ========= LEFT OUTER ROTOR ========= -->
+    <!-- Wingspan -->
 
-    <circle cx="-120" cy="-95" r="28"/>
-    <circle cx="-120" cy="-95" r="4" fill="#00E5FF"/>
+    <line x1="-120" y1="-135" x2="210" y2="-135"/>
 
-    <!-- Propeller -->
-    <g transform="translate(-120,-95)">
+    <line x1="-120" y1="-125" x2="-120" y2="-145"/>
+
+    <line x1="210" y1="-125" x2="210" y2="-145"/>
+
+    <!-- Fuselage -->
+
+    <line x1="245" y1="-12" x2="245" y2="12"/>
+
+    <line x1="225" y1="0" x2="295" y2="0"/>
+
+    <!-- Center of Gravity -->
+
+    <circle
+        cx="-20"
+        cy="0"
+        r="18"/>
+
+    <line
+        x1="-30"
+        y1="0"
+        x2="-10"
+        y2="0"/>
+
+    <line
+        x1="-20"
+        y1="-10"
+        x2="-20"
+        y2="10"/>
+
+</g>
+
+<!-- ===================================================== -->
+<!-- LABELS -->
+<!-- ===================================================== -->
+
+<g
+transform="translate(930,260)"
+fill="#8CFBFF"
+font-family="Consolas"
+font-size="12">
+
+<text x="-5" y="-150">WING SPAN</text>
+
+<text x="305" y="5">LENGTH</text>
+
+<text x="-55" y="-28">CG</text>
+
+<text x="-255" y="-84">ROTOR</text>
+
+<text x="145" y="-18">TILT</text>
+
+</g>
+<!-- ===================================================== -->
+<!-- RADAR SYSTEM -->
+<!-- ===================================================== -->
+
+<g id="radarSystem"
+   transform="translate(1325,250)">
+
+    <!-- Outer Ring -->
+
+    <circle
+        r="120"
+        fill="none"
+        stroke="#00E5FF"
+        stroke-width="2"
+        opacity=".35"/>
+
+    <circle
+        r="90"
+        fill="none"
+        stroke="#00E5FF"
+        opacity=".25"/>
+
+    <circle
+        r="60"
+        fill="none"
+        stroke="#00E5FF"
+        opacity=".20"/>
+
+    <circle
+        r="30"
+        fill="none"
+        stroke="#00E5FF"
+        opacity=".20"/>
+
+    <!-- Crosshair -->
+
+    <line
+        x1="-120"
+        y1="0"
+        x2="120"
+        y2="0"
+        stroke="#00E5FF"
+        opacity=".25"/>
+
+    <line
+        x1="0"
+        y1="-120"
+        x2="0"
+        y2="120"
+        stroke="#00E5FF"
+        opacity=".25"/>
+
+    <!-- ================================================= -->
+    <!-- Radar Sweep -->
+    <!-- ================================================= -->
+
+    <g>
+
         <animateTransform
             attributeName="transform"
             type="rotate"
             from="0"
             to="360"
-            dur="8s"
-            repeatCount="indefinite"/>
-
-        <line x1="-20" y1="0" x2="20" y2="0"/>
-        <line x1="0" y1="-20" x2="0" y2="20"/>
-    </g>
-
-    <!-- ========= RIGHT OUTER ROTOR ========= -->
-
-    <circle cx="-120" cy="95" r="28"/>
-    <circle cx="-120" cy="95" r="4" fill="#00E5FF"/>
-
-    <g transform="translate(-120,95)">
-        <animateTransform
-            attributeName="transform"
-            type="rotate"
-            from="360"
-            to="0"
-            dur="8s"
-            repeatCount="indefinite"/>
-
-        <line x1="-20" y1="0" x2="20" y2="0"/>
-        <line x1="0" y1="-20" x2="0" y2="20"/>
-    </g>
-
-    <!-- ========= FRONT RIGHT ROTOR ========= -->
-
-    <circle cx="95" cy="-20" r="24"/>
-    <circle cx="95" cy="-20" r="4" fill="#00E5FF"/>
-
-    <g transform="translate(95,-20)">
-        <animateTransform
-            attributeName="transform"
-            type="rotate"
-            from="0"
-            to="-360"
             dur="6s"
             repeatCount="indefinite"/>
-
-        <line x1="-18" y1="0" x2="18" y2="0"/>
-        <line x1="0" y1="-18" x2="0" y2="18"/>
-    </g>
-
-    <!-- ========= REAR RIGHT ROTOR ========= -->
-
-    <circle cx="95" cy="20" r="24"/>
-    <circle cx="95" cy="20" r="4" fill="#00E5FF"/>
-
-    <g transform="translate(95,20)">
-        <animateTransform
-            attributeName="transform"
-            type="rotate"
-            from="-360"
-            to="0"
-            dur="6s"
-            repeatCount="indefinite"/>
-
-        <line x1="-18" y1="0" x2="18" y2="0"/>
-        <line x1="0" y1="-18" x2="0" y2="18"/>
-    </g>
-
-    <!-- ========= NACELLES ========= -->
-
-    <rect x="-132" y="-108" width="24" height="26" rx="3"/>
-
-    <rect x="-132" y="82" width="24" height="26" rx="3"/>
-
-    <rect x="84" y="-31" width="22" height="22" rx="3"/>
-
-    <rect x="84" y="9" width="22" height="22" rx="3"/>
-
-    <!-- ========= LANDING GEAR ========= -->
-
-    <line x1="-25" y1="12" x2="-40" y2="48"/>
-
-    <line x1="20" y1="12" x2="35" y2="48"/>
-
-    <line x1="-48" y1="48" x2="-20" y2="48"/>
-
-    <line x1="20" y1="48" x2="48" y2="48"/>
-
-</g>
-
-     <!-- ========================================================= -->
-<!--        ENGINEERING DIMENSIONS & BLUEPRINT HUD (4C)        -->
-<!-- ========================================================= -->
-
-<g id="engineeringDimensions"
-   transform="translate(880,260)"
-   stroke="#66F5FF"
-   stroke-width="1"
-   fill="none"
-   opacity=".45">
-
-    <!-- ============================= -->
-    <!-- WING SPAN DIMENSION -->
-    <!-- ============================= -->
-
-    <line x1="-120" y1="-145" x2="220" y2="-145"/>
-
-    <line x1="-120" y1="-135" x2="-120" y2="-155"/>
-
-    <line x1="220" y1="-135" x2="220" y2="-155"/>
-
-    <polygon
-        points="-120,-145 -114,-142 -114,-148"
-        fill="#66F5FF"/>
-
-    <polygon
-        points="220,-145 214,-142 214,-148"
-        fill="#66F5FF"/>
-
-    <text
-        x="5"
-        y="-155"
-        text-anchor="middle"
-        fill="#8EF8FF"
-        font-size="12"
-        font-family="Consolas">
-
-        WING SPAN
-
-    </text>
-
-    <!-- ============================= -->
-    <!-- FUSELAGE LENGTH -->
-    <!-- ============================= -->
-
-    <line
-        x1="270"
-        y1="-10"
-        x2="270"
-        y2="10"/>
-
-    <line
-        x1="250"
-        y1="0"
-        x2="320"
-        y2="0"/>
-
-    <text
-        x="330"
-        y="5"
-        font-size="12"
-        fill="#8EF8FF"
-        font-family="Consolas">
-
-        LENGTH
-
-    </text>
-
-    <!-- ============================= -->
-    <!-- CENTER OF GRAVITY -->
-    <!-- ============================= -->
-
-    <circle
-        cx="-15"
-        cy="0"
-        r="18"/>
-
-    <line
-        x1="-25"
-        y1="0"
-        x2="-5"
-        y2="0"/>
-
-    <line
-        x1="-15"
-        y1="-10"
-        x2="-15"
-        y2="10"/>
-
-    <text
-        x="-48"
-        y="-24"
-        font-size="11"
-        fill="#8EF8FF"
-        font-family="Consolas">
-
-        CG
-
-    </text>
-
-    <!-- ============================= -->
-    <!-- ROTOR AXIS LABELS -->
-    <!-- ============================= -->
-
-    <line x1="-120" y1="-95" x2="-185" y2="-95"/>
-
-    <text
-        x="-255"
-        y="-90"
-        font-size="11"
-        fill="#8EF8FF"
-        font-family="Consolas">
-
-        ROTOR AXIS
-
-    </text>
-
-    <line x1="95" y1="-20" x2="175" y2="-20"/>
-
-    <text
-        x="185"
-        y="-15"
-        font-size="11"
-        fill="#8EF8FF"
-        font-family="Consolas">
-
-        TILT MOTOR
-
-    </text>
-
-    <!-- ============================= -->
-    <!-- CONSTRUCTION CIRCLES -->
-    <!-- ============================= -->
-
-    <circle cx="-120" cy="-95" r="40"/>
-
-    <circle cx="-120" cy="95" r="40"/>
-
-    <circle cx="95" cy="-20" r="36"/>
-
-    <circle cx="95" cy="20" r="36"/>
-
-    <!-- ============================= -->
-    <!-- CROSSHAIRS -->
-    <!-- ============================= -->
-
-    <g>
-
-        <line x1="-15" y1="-40" x2="-15" y2="40"/>
-
-        <line x1="-55" y1="0" x2="25" y2="0"/>
-
-    </g>
-
-</g>
-
-     <!-- ========================================================= -->
-<!--              BLUEPRINT FX & POLISH (4D)                   -->
-<!-- ========================================================= -->
-
-<g id="blueprintFX"
-   transform="translate(880,260)">
-
-    <!-- ===================================================== -->
-    <!-- PULSING BLUEPRINT GLOW -->
-    <!-- ===================================================== -->
-
-    <circle
-        cx="-15"
-        cy="0"
-        r="165"
-        fill="none"
-        stroke="#00E5FF"
-        opacity=".08">
-
-        <animate
-            attributeName="r"
-            values="155;170;155"
-            dur="5s"
-            repeatCount="indefinite"/>
-
-        <animate
-            attributeName="opacity"
-            values=".02;.12;.02"
-            dur="5s"
-            repeatCount="indefinite"/>
-
-    </circle>
-
-    <!-- ===================================================== -->
-    <!-- SCANNING DOT -->
-    <!-- ===================================================== -->
-
-    <circle
-        r="4"
-        fill="#66FCFF">
-
-        <animateMotion
-            dur="8s"
-            repeatCount="indefinite"
-            path="M -210 0 L 205 0"/>
-
-    </circle>
-
-    <!-- ===================================================== -->
-    <!-- FLOATING DATA NODES -->
-    <!-- ===================================================== -->
-
-    <g fill="#66F5FF">
-
-        <circle cx="-170" cy="-120" r="2">
-            <animate attributeName="opacity"
-                     values="0;1;0"
-                     dur="2.5s"
-                     repeatCount="indefinite"/>
-        </circle>
-
-        <circle cx="-60" cy="110" r="2">
-            <animate attributeName="opacity"
-                     values="0;1;0"
-                     dur="3s"
-                     repeatCount="indefinite"/>
-        </circle>
-
-        <circle cx="150" cy="-80" r="2">
-            <animate attributeName="opacity"
-                     values="0;1;0"
-                     dur="2.8s"
-                     repeatCount="indefinite"/>
-        </circle>
-
-        <circle cx="190" cy="75" r="2">
-            <animate attributeName="opacity"
-                     values="0;1;0"
-                     dur="3.2s"
-                     repeatCount="indefinite"/>
-        </circle>
-
-    </g>
-
-    <!-- ===================================================== -->
-    <!-- ENERGY LINKS -->
-    <!-- ===================================================== -->
-
-    <line
-        x1="-120"
-        y1="-95"
-        x2="-15"
-        y2="0"
-        stroke="#00E5FF"
-        stroke-dasharray="6 8"
-        opacity=".25">
-
-        <animate
-            attributeName="stroke-dashoffset"
-            from="40"
-            to="0"
-            dur="2s"
-            repeatCount="indefinite"/>
-
-    </line>
-
-    <line
-        x1="-15"
-        y1="0"
-        x2="95"
-        y2="-20"
-        stroke="#00E5FF"
-        stroke-dasharray="6 8"
-        opacity=".25">
-
-        <animate
-            attributeName="stroke-dashoffset"
-            from="40"
-            to="0"
-            dur="2s"
-            repeatCount="indefinite"/>
-
-    </line>
-
-</g>
-
-     <!-- ========================================================= -->
-<!--                RADAR CONSOLE (PART 5)                     -->
-<!-- ========================================================= -->
-
-<g id="radarConsole"
-   transform="translate(1320,260)"
-   filter="url(#glow)">
-
-    <!-- ========================= -->
-    <!-- OUTER RINGS -->
-    <!-- ========================= -->
-
-    <circle r="125"
-            fill="none"
-            stroke="#00E5FF"
-            stroke-width="2"
-            opacity=".35"/>
-
-    <circle r="95"
-            fill="none"
-            stroke="#00E5FF"
-            opacity=".25"/>
-
-    <circle r="65"
-            fill="none"
-            stroke="#00E5FF"
-            opacity=".20"/>
-
-    <circle r="35"
-            fill="none"
-            stroke="#00E5FF"
-            opacity=".20"/>
-
-    <!-- CROSSHAIRS -->
-
-    <line x1="-125" y1="0" x2="125" y2="0"
-          stroke="#00E5FF"
-          opacity=".25"/>
-
-    <line x1="0" y1="-125" x2="0" y2="125"
-          stroke="#00E5FF"
-          opacity=".25"/>
-
-    <!-- ========================= -->
-    <!-- SWEEP -->
-    <!-- ========================= -->
-
-    <g>
 
         <line
             x1="0"
             y1="0"
-            x2="110"
+            x2="105"
             y2="0"
             stroke="#66FCFF"
-            stroke-width="3">
+            stroke-width="3"/>
 
-            <animateTransform
-                attributeName="transform"
-                type="rotate"
-                from="0"
-                to="360"
-                dur="6s"
-                repeatCount="indefinite"/>
-
-        </line>
+        <circle
+            cx="105"
+            cy="0"
+            r="3"
+            fill="#66FCFF"/>
 
     </g>
 
-    <!-- ========================= -->
-    <!-- PULSE -->
-    <!-- ========================= -->
+    <!-- ================================================= -->
+    <!-- Expanding Pulse -->
+    <!-- ================================================= -->
 
     <circle
-        r="30"
+        r="10"
         fill="none"
         stroke="#66FCFF"
         opacity=".35">
 
         <animate
             attributeName="r"
-            values="30;125"
+            values="10;120"
             dur="4s"
             repeatCount="indefinite"/>
 
@@ -1171,30 +823,37 @@ opacity=".55">
 
     </circle>
 
-    <!-- ========================= -->
-    <!-- TARGET BLIPS -->
-    <!-- ========================= -->
+    <!-- ================================================= -->
+    <!-- Targets -->
+    <!-- ================================================= -->
 
     <g fill="#66FCFF">
 
-        <circle cx="55" cy="-40" r="3">
+        <circle cx="45" cy="-55" r="3">
             <animate attributeName="opacity"
                      values="0;1;0"
                      dur="2s"
                      repeatCount="indefinite"/>
         </circle>
 
-        <circle cx="-75" cy="60" r="3">
+        <circle cx="-70" cy="50" r="3">
             <animate attributeName="opacity"
                      values="0;1;0"
                      dur="3s"
                      repeatCount="indefinite"/>
         </circle>
 
-        <circle cx="20" cy="85" r="3">
+        <circle cx="15" cy="78" r="3">
             <animate attributeName="opacity"
                      values="0;1;0"
                      dur="2.5s"
+                     repeatCount="indefinite"/>
+        </circle>
+
+        <circle cx="-35" cy="-82" r="3">
+            <animate attributeName="opacity"
+                     values="0;1;0"
+                     dur="3.5s"
                      repeatCount="indefinite"/>
         </circle>
 
@@ -1202,241 +861,226 @@ opacity=".55">
 
 </g>
 
-<!-- ========================================================= -->
-<!--              TELEMETRY PANEL                              -->
-<!-- ========================================================= -->
+<!-- ===================================================== -->
+<!-- TELEMETRY PANEL -->
+<!-- ===================================================== -->
 
-<g id="telemetry">
+<g id="telemetryPanel">
 
-<text
-x="1180"
-y="430"
-font-family="Consolas"
-font-size="14"
-fill="#7EF6FF">
+    <text
+        x="1160"
+        y="410"
+        font-family="Consolas"
+        font-size="14"
+        fill="#7CF8FF">
 
-SIGNAL ............ 98%
+        SIGNAL ............ 98%
 
-</text>
+    </text>
 
-<text
-x="1180"
-y="450"
-font-family="Consolas"
-font-size="14"
-fill="#7EF6FF">
+    <text
+        x="1160"
+        y="432"
+        font-family="Consolas"
+        font-size="14"
+        fill="#7CF8FF">
 
-TRACKING .......... ACTIVE
+        TRACKING .......... ACTIVE
 
-</text>
+    </text>
 
-<text
-x="1180"
-y="470"
-font-family="Consolas"
-font-size="14"
-fill="#7EF6FF">
+    <text
+        x="1160"
+        y="454"
+        font-family="Consolas"
+        font-size="14"
+        fill="#7CF8FF">
 
-GPS LOCK .......... TRUE
+        GPS LOCK .......... TRUE
 
-</text>
+    </text>
 
-<text
-x="1180"
-y="490"
-font-family="Consolas"
-font-size="14"
-fill="#7EF6FF">
+    <text
+        x="1160"
+        y="476"
+        font-family="Consolas"
+        font-size="14"
+        fill="#7CF8FF">
 
-BATTERY ........... 100%
+        BATTERY ........... 100%
 
-</text>
+    </text>
+
+    <text
+        x="1160"
+        y="498"
+        font-family="Consolas"
+        font-size="14"
+        fill="#7CF8FF">
+
+        STATUS ............ NOMINAL
+
+    </text>
+
+</g>
+<!-- ===================================================== -->
+<!-- MECHANICAL GEAR -->
+<!-- ===================================================== -->
+
+<g id="gearAssembly"
+   transform="translate(180,425)"
+   stroke="#66FCFF"
+   stroke-width="2"
+   fill="none"
+   opacity=".75">
+
+    <g>
+
+        <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from="0"
+            to="360"
+            dur="20s"
+            repeatCount="indefinite"/>
+
+        <circle r="30"/>
+
+        <circle r="10"/>
+
+        <line x1="-30" y1="0" x2="-38" y2="0"/>
+        <line x1="30" y1="0" x2="38" y2="0"/>
+
+        <line x1="0" y1="-30" x2="0" y2="-38"/>
+        <line x1="0" y1="30" x2="0" y2="38"/>
+
+        <line x1="-21" y1="-21" x2="-27" y2="-27"/>
+        <line x1="21" y1="-21" x2="27" y2="-27"/>
+
+        <line x1="-21" y1="21" x2="-27" y2="27"/>
+        <line x1="21" y1="21" x2="27" y2="27"/>
+
+    </g>
 
 </g>
 
-     <!-- ========================================================= -->
-<!--                GLOBAL SCANLINE                            -->
-<!-- ========================================================= -->
+<!-- ===================================================== -->
+<!-- FLOATING HUD PARTICLES -->
+<!-- ===================================================== -->
 
-<defs>
+<g fill="#66FCFF" opacity=".55">
 
-<linearGradient id="scanGradient"
-x1="0"
-y1="0"
-x2="1"
-y2="0">
+    <circle cx="240" cy="120" r="2">
+        <animate attributeName="cy"
+                 values="120;95;120"
+                 dur="6s"
+                 repeatCount="indefinite"/>
+    </circle>
 
-<stop offset="0%" stop-color="#00E5FF" stop-opacity="0"/>
+    <circle cx="520" cy="85" r="2">
+        <animate attributeName="cy"
+                 values="85;60;85"
+                 dur="8s"
+                 repeatCount="indefinite"/>
+    </circle>
 
-<stop offset="50%" stop-color="#00E5FF" stop-opacity=".22"/>
+    <circle cx="860" cy="430" r="2">
+        <animate attributeName="cy"
+                 values="430;405;430"
+                 dur="7s"
+                 repeatCount="indefinite"/>
+    </circle>
 
-<stop offset="100%" stop-color="#00E5FF" stop-opacity="0"/>
+    <circle cx="1120" cy="160" r="2">
+        <animate attributeName="cy"
+                 values="160;135;160"
+                 dur="5s"
+                 repeatCount="indefinite"/>
+    </circle>
 
-</linearGradient>
-
-</defs>
-
-<rect
-x="-350"
-y="0"
-width="350"
-height="520"
-fill="url(#scanGradient)">
-
-<animate
-attributeName="x"
-from="-350"
-to="1950"
-dur="9s"
-repeatCount="indefinite"/>
-
-</rect>
-
-
-
-<!-- ========================================================= -->
-<!--               FLOATING PARTICLES                          -->
-<!-- ========================================================= -->
-
-<g fill="#66FCFF">
-
-<circle cx="250" cy="120" r="2">
-<animate attributeName="cy"
-values="120;95;120"
-dur="5s"
-repeatCount="indefinite"/>
-</circle>
-
-<circle cx="540" cy="70" r="2">
-<animate attributeName="cy"
-values="70;45;70"
-dur="6s"
-repeatCount="indefinite"/>
-</circle>
-
-<circle cx="760" cy="420" r="2">
-<animate attributeName="cy"
-values="420;390;420"
-dur="8s"
-repeatCount="indefinite"/>
-</circle>
-
-<circle cx="1110" cy="170" r="2">
-<animate attributeName="cy"
-values="170;145;170"
-dur="7s"
-repeatCount="indefinite"/>
-</circle>
-
-<circle cx="1450" cy="370" r="2">
-<animate attributeName="cy"
-values="370;340;370"
-dur="5s"
-repeatCount="indefinite"/>
-</circle>
+    <circle cx="1470" cy="350" r="2">
+        <animate attributeName="cy"
+                 values="350;325;350"
+                 dur="6s"
+                 repeatCount="indefinite"/>
+    </circle>
 
 </g>
 
+<!-- ===================================================== -->
+<!-- BOTTOM STATUS BAR -->
+<!-- ===================================================== -->
 
+<line
+    x1="80"
+    y1="510"
+    x2="1520"
+    y2="510"
+    stroke="#00E5FF"
+    opacity=".25"/>
 
-<!-- ========================================================= -->
-<!--                  ROTATING GEAR                            -->
-<!-- ========================================================= -->
+<text
+    x="95"
+    y="503"
+    fill="#7CF8FF"
+    font-family="Consolas"
+    font-size="12">
 
-<g transform="translate(150,410)">
+ENGINEERING PORTFOLIO • UAV • ROBOTICS • CAD • CFD • IEEE
 
-<g>
+</text>
 
-<animateTransform
-
-attributeName="transform"
-
-type="rotate"
-
-from="0"
-
-to="360"
-
-dur="20s"
-
-repeatCount="indefinite"/>
-
-<circle
-r="26"
-fill="none"
-stroke="#00E5FF"
-stroke-width="2"/>
-
-<circle
-r="10"
-fill="none"
-stroke="#00E5FF"/>
-
-<line x1="-26" y1="0" x2="-34" y2="0"/>
-<line x1="26" y1="0" x2="34" y2="0"/>
-<line x1="0" y1="-26" x2="0" y2="-34"/>
-<line x1="0" y1="26" x2="0" y2="34"/>
-
-<line x1="-18" y1="-18" x2="-24" y2="-24"/>
-<line x1="18" y1="-18" x2="24" y2="-24"/>
-<line x1="-18" y1="18" x2="-24" y2="24"/>
-<line x1="18" y1="18" x2="24" y2="24"/>
-
-</g>
-
-</g>
-
-
-
-<!-- ========================================================= -->
-<!--                COORDINATE MARKERS                         -->
-<!-- ========================================================= -->
+<!-- ===================================================== -->
+<!-- HUD COORDINATES -->
+<!-- ===================================================== -->
 
 <g
 font-family="Consolas"
 font-size="11"
-fill="#55E7FF"
-opacity=".45">
+fill="#66FCFF"
+opacity=".35">
 
 <text x="55" y="70">X:000</text>
 
-<text x="1455" y="70">X:1600</text>
+<text x="1450" y="70">X:1600</text>
 
-<text x="55" y="465">Y:520</text>
+<text x="55" y="470">Y:520</text>
 
-<text x="1400" y="465">HUD v1.0</text>
+<text x="1410" y="470">HUD v1.0</text>
 
 </g>
 
+<!-- ===================================================== -->
+<!-- SYSTEM LEDS -->
+<!-- ===================================================== -->
 
+<g>
 
-<!-- ========================================================= -->
-<!--                 BOTTOM STATUS BAR                         -->
-<!-- ========================================================= -->
+<circle cx="1495" cy="95" r="4" fill="#00FF88">
+    <animate attributeName="opacity"
+             values="1;.3;1"
+             dur="2s"
+             repeatCount="indefinite"/>
+</circle>
 
-<line
-x1="80"
-y1="510"
-x2="1520"
-y2="510"
-stroke="#00E5FF"
-opacity=".25"/>
+<circle cx="1495" cy="110" r="4" fill="#00E5FF">
+    <animate attributeName="opacity"
+             values=".3;1;.3"
+             dur="3s"
+             repeatCount="indefinite"/>
+</circle>
 
-<text
-x="100"
-y="505"
-font-family="Consolas"
-font-size="12"
-fill="#7EF6FF">
+<circle cx="1495" cy="125" r="4" fill="#66FCFF">
+    <animate attributeName="opacity"
+             values="1;.2;1"
+             dur="4s"
+             repeatCount="indefinite"/>
+</circle>
 
-ENGINEERING PORTFOLIO • SYSTEM ONLINE • CAD • UAV • ROBOTICS
+</g>
 
-</text>
-
-
-
-<!-- ========================================================= -->
-<!--                    END OF SVG                             -->
-<!-- ========================================================= -->
+<!-- ===================================================== -->
+<!-- END SVG -->
+<!-- ===================================================== -->
 
 </svg>
