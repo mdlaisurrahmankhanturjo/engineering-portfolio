@@ -46,20 +46,7 @@ Its purpose is to provide recruiters, researchers, students, and collaborators w
 
 ---
 
-# 🚀 Quick Navigation
 
-| Explore | Description |
-|----------|-------------|
-| 📄 [Technical Reports](reports/) | Engineering reports, calculations, and documentation |
-| 📐 [CAD Library](cad/) | CAD models, assemblies, renderings, and engineering drawings |
-| 📊 [Simulation Archive](simulations/) | CFD, FEA, MATLAB, and engineering analyses |
-| 📚 [Research](research/) | Publications, conference materials, and research resources |
-| 📷 [Engineering Gallery](gallery/) | Development photos, prototypes, and project milestones |
-| 📝 [Engineering Notes](notes/) | Design decisions, references, and technical notes |
-| 📂 [Repository Directory](repository-directory/) | Quick access to engineering repositories |
-| 📥 [Downloads](downloads/) | Resume, thesis, presentations, and certificates |
-
----
 
 # 📖 Repository Purpose
 
@@ -98,21 +85,7 @@ Everything in this section is available for viewing or downloading.
 
 ---
 
-# 📂 Resource Library
 
-Explore the engineering resources organized throughout this repository.
-
-| Section | Description | Open |
-|---------|-------------|------|
-| 📄 Technical Reports | Engineering reports and documentation | **[Browse](reports/)** |
-| 📐 CAD Library | CAD models, assemblies and engineering drawings | **[Browse](cad/)** |
-| 📊 Simulation Archive | CFD, FEA, MATLAB and engineering analyses | **[Browse](simulations/)** |
-| 📚 Research | Publications, posters and supporting materials | **[Browse](research/)** |
-| 📷 Engineering Gallery | Prototype photographs, renders and development progress | **[Browse](gallery/)** |
-| 📝 Engineering Notes | Design decisions, references and technical notes | **[Browse](notes/)** |
-| 🗂 Repository Directory | Navigation to all engineering repositories | **[Browse](repository-directory/)** |
-
----
 
 # 🌐 Professional Profiles
 
