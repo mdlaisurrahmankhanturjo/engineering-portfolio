@@ -3,7 +3,7 @@
 <!-- =============================================================== -->
 
 <p align="center">
-  <img src="assets/banner.png" width="100%" alt="Engineering Portfolio Banner">
+<img src="assets/hero.svg" width="100%">
 </p>
 
 <h1 align="center">Engineering Portfolio</h1>
