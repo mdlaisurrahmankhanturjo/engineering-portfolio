@@ -57,7 +57,7 @@ Everything in this section is available for viewing or downloading.
 
 | Resource | Description | Access |
 |----------|-------------|--------|
-| 📄 Resume | Latest professional resume | **[View Resume](downloads/.pdf)** |
+| 📄 Resume | Latest professional resume | **[View Resume](downloads/Resume.pdf)** |
 | 🎓 Bachelor's Thesis | Design and Development of a Fixed-Wing VTOL UAV with Tilt-Rotors | **[Read Thesis](downloads/Thesis.pdf)** |
 | 📊 Project Presentation | Final thesis presentation slides | **[Open Presentation](downloads/Presentation.pdf)** |
 | 📚 IEEE Conference Paper | Control System Design of a Fixed-Wing VTOL UAV (ECCE 2025) | **[View on IEEE Xplore](https://ieeexplore.ieee.org/document/11013869)** |
